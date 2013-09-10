@@ -1,0 +1,80 @@
+<div class="row apps-header">
+    <div class="col-md-1"><img src="img/appLogo.png" height="100" width="100"/></div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <p class="applications-title">{{ application.name }}</p>
+        <p class="applications-descriptor">Application Code: {{ application.code }}</p>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-1">
+        <a href="application/{{ application.code }}/edit">
+            <img src="img/editApp.png" width=64 height=64 />
+            <legend>Edit</legend>
+        </a>
+    </div>
+    <div class="col-md-1">
+        <a href="application/{{ application.code }}delete">
+            <img src="img/deleteApp.png" width=64 height=64 />
+            <legend>Delete</legend>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <input class="btn btn-info strength" type="button" value="Back">
+    </div>
+    <div class="col-md-7"></div>
+    <div class="col-md-3"><p class="application-settings">Settings:</p></div>
+</div>
+
+<form>
+    <div class="row spacer">
+        <div class="col-md-9">
+            <textarea class="form-control" rows="5" placeholder="Type message here"></textarea>
+        </div>
+        <div class="col-md-3">
+            <p class="application-configure">
+                <img src="img/apple.png" width="32" height="32" />
+                <input class="btn btn-info" type="button" value="configure" />
+            </p>
+            <p class="application-configure">
+                <img src="img/android.png" width="32" height="32" />
+                <input class="btn btn-info" type="button" value="configure" />
+            </p>
+            <p class="application-configure">
+                <img src="img/windows.png" width="32" height="32" />
+                <input class="btn btn-info" type="button" value="configure" />
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="form-group">
+                <div class="col-lg-12 no-padding"><input type="email" class="form-control" id="inputEmail1" placeholder="Type URL here"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="os-checkboxes">
+                <div class="row">
+                    <div class="col-md-4"><label><input type="checkbox">iOS</label></div>
+                    <div class="col-md-4"><label><input type="checkbox">Nokia</label></div>
+                    <div class="col-md-4"><label><input type="checkbox">Windows Phone</label></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><label><input type="checkbox">Android</label></div>
+                    <div class="col-md-4"><label><input type="checkbox">BlackBerry</label></div>
+                    <div class="col-md-4"><label><input type="checkbox">MacOS</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            <input class="btn btn-primary strength" type="button" value="Push Message">
+        </div>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+<div class="row apps-header">
+    <img src="img/appHeader.png" height="64" width="64"/>
+    <span>{{ application.name }} [{{ application.code }}] Subscribers:</span>
+</div>
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>User Name</td>
+                <td>ID</td>
+                <td>OS Version</td>
+                <td>Language</td>
+            </tr>
+        </thead>
+        <tr ng-repeat="subscriber in subscribers">
+            <td>{{ $index }}</td>
+            <td>{{ subscriber.userName }}</td>
+            <td>{{ subscriber.id }}</td>
+            <td>{{ subscriber.osVersion }}</td>
+            <td>{{ subscriber.lang }}</td>
+        </tr>
+    </table>
+</div>

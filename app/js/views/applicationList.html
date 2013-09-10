@@ -1,0 +1,55 @@
+<div class="row apps-header">
+    <div class="col-md-1"><img src="img/appHeader.png" height="100" width="100"/></div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <p class="applications-title">Applications</p>
+        <p>
+            <input class="btn btn-primary" type="button" value="Add Application" data-toggle="modal" data-target="#create-application" />
+            <input class="btn btn-primary" type="button" value="Add Group" />
+        </p>
+    </div>
+    <div class="col-md-6"></div>
+</div>
+
+<div class="row apps-list-item" ng-repeat="application in applications">
+    <div class="col-md-1"><img src="img/appLogo.png" height="64" width="64"/></div>
+    <div class="col-md-4">
+        <p class="application-header"><a ng-href="index.html#/application/{{ application.code }}">{{ application.name }}</a></p>
+        <p class="application-code">Application Code: {{ application.code }}</p>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-2 button-vertical-align">
+        <input class="btn btn-info strength" type="button" value="{{ application.subscribers }} Subscribers"
+               ng-click="showSubscribers('{{ application.code }}')"/>
+    </div>
+    <div class="col-md-2 button-vertical-align">
+        <input class="btn btn-info strength" type="button" value="{{ application.languages }} Languages" />
+    </div>
+</div>
+
+<div class="modal fade" id="create-application" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Create new application</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="applicationName">Application name</label>
+                        <input type="text" class="form-control" id="applicationName" placeholder="Enter Application Name" ng-model="application.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="applicationCode">Password</label>
+                        <input type="text" class="form-control" id="applicationCode" placeholder="Enter Application Code" ng-model="application.code">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addApplication(application)">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
